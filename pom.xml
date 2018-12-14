@@ -28,11 +28,11 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 		</dependency>
-
+ -->
 		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
