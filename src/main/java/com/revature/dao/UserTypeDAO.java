@@ -1,35 +1,14 @@
 package com.revature.dao;
 
-import org.hibernate.Session;
-
 import com.revature.pojos.UserType;
-import com.revature.util.SessionUtil;
 
-public class UserTypeDAO {
+public interface UserTypeDAO {
 	/*---------------------------------------------
 	  * CRUD METHODS
 	  * 
 	  * -----------------------------------------*/
-	     public void persist(UserType entity) {
-	    	 Session sess = SessionUtil.getSession();
-	         sess.save(entity);
-	 
-	     }
-	     public void update(UserType entity) {
-	    	 Session sess = SessionUtil.getSession();
-	         sess.update(entity);
-	 
-	     }
-	 
-	    public UserType findById(int id) {
-	    	 Session sess = SessionUtil.getSession();
-	    	 UserType us = (UserType) sess.get(UserType.class, id);
-	         return us;
-	 
-	     }
-	     public void delete(UserType entity) {
-	    	 Session sess = SessionUtil.getSession();
-	         sess.delete(entity);
-	 
-	     }
+	     public void persist(UserType entity);
+	     public void update(UserType entity) ;
+	     public UserType findById(int id);
+	     public void delete(UserType entity);
 }

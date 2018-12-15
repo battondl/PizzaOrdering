@@ -2,6 +2,8 @@ package com.revature.pojos;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -12,7 +14,7 @@ import javax.persistence.Table;
  * 
  * *********************************************/
 @Entity
-@Table(name="ORDERS")
+@Table(name="ORDERS" , schema="pizza")
 public class Orders {
 	/************************************************
 	 * serial Order_ID
@@ -21,6 +23,7 @@ public class Orders {
 	 * *********************************************/
 	@Id
 	@Column(name="order_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int orderId;
 	/************************************************
 	 * Customer_Number
@@ -29,7 +32,7 @@ public class Orders {
 	 * *********************************************/
 	@OneToOne
 	@JoinColumn(name="user_id")
-	private int customerNumber;
+	private Users customerNumber;
 	/************************************************
 	 * Monetary_Total
 	 * 
@@ -56,10 +59,11 @@ public class Orders {
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
-	public int getCustomerNumber() {
+
+	public Users getCustomerNumber() {
 		return customerNumber;
 	}
-	public void setCustomerNumber(int customerNumber) {
+	public void setCustomerNumber(Users customerNumber) {
 		this.customerNumber = customerNumber;
 	}
 	public double getMoneyTotal() {
@@ -78,7 +82,7 @@ public class Orders {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Orders(int orderId, int customerNumber, double moneyTotal, int driverId) {
+	public Orders(int orderId, Users customerNumber, double moneyTotal, int driverId) {
 		super();
 		this.orderId = orderId;
 		this.customerNumber = customerNumber;
@@ -90,6 +94,7 @@ public class Orders {
 		return "Orders [orderId=" + orderId + ", customerNumber=" + customerNumber + ", moneyTotal=" + moneyTotal
 				+ ", driverId=" + driverId + "]";
 	}
+
 	
 	
 

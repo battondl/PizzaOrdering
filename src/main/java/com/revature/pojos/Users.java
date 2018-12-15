@@ -2,6 +2,8 @@ package com.revature.pojos;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -11,7 +13,7 @@ import javax.persistence.Table;
  * 
  * ****************************************/
 @Entity
-@Table(name="USERS")
+@Table(name="USERS", schema="pizza")
 public class Users {
 	/******************************************
 	 * ID of the user 
@@ -20,6 +22,7 @@ public class Users {
 	 * ****************************************/
 	@Id
 	@Column(name="user_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int userId;
 	
 	/******************************************
@@ -57,7 +60,7 @@ public class Users {
 	 * ****************************************/
 	@OneToOne
 	@JoinColumn(name="type_id")
-	private int typeId;
+	private UserType typeId;
 	
 	/******************************************
 	 * Phone_Number
@@ -125,11 +128,11 @@ public class Users {
 		this.password = password;
 	}
 
-	public int getTypeId() {
+	public UserType getTypeId() {
 		return typeId;
 	}
 
-	public void setTypeId(int typeId) {
+	public void setTypeId(UserType typeId) {
 		this.typeId = typeId;
 	}
 
@@ -163,7 +166,7 @@ public class Users {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Users(int userId, String firstName, String lastName, String username, String password, int typeId,
+	public Users(int userId, String firstName, String lastName, String username, String password, UserType typeId,
 			String phoneNumber, String email, boolean isDriver) {
 		super();
 		this.userId = userId;
@@ -183,6 +186,12 @@ public class Users {
 				+ username + ", password=" + password + ", typeId=" + typeId + ", phoneNumber=" + phoneNumber
 				+ ", email=" + email + ", isDriver=" + isDriver + "]";
 	}
+
+
+
+
+
+
 	
 	
 	

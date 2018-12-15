@@ -1,33 +1,34 @@
-package com.revature.dao;
+package com.revature.daoImpl;
 
 import org.hibernate.Session;
 
-import com.revature.pojos.Users;
+import com.revature.dao.DriversDAO;
+import com.revature.pojos.Drivers;
 import com.revature.util.SessionUtil;
 
-public class userDAO {
+public class DriversDaoImpl implements DriversDAO{
 	/*---------------------------------------------
 	  * CRUD METHODS
 	  * 
 	  * -----------------------------------------*/
-	     public void persist(Users entity) {
+	     public void persist(Drivers entity) {
 	    	 Session sess = SessionUtil.getSession();
 	         sess.save(entity);
 	 
 	     }
-	     public void update(Users entity) {
+	     public void update(Drivers entity) {
 	    	 Session sess = SessionUtil.getSession();
 	         sess.update(entity);
 	 
 	     }
 	 
-	    public Users findById(int id) {
+	    public Drivers findById(int id) {
 	    	 Session sess = SessionUtil.getSession();
-	    	 Users us = (Users) sess.get(Users.class, id);
+	    	 Drivers us = (Drivers) sess.get(Drivers.class, id);
 	         return us;
 	 
 	     }
-	     public void delete(Users entity) {
+	     public void delete(Drivers entity) {
 	    	 Session sess = SessionUtil.getSession();
 	         sess.delete(entity);
 	 

@@ -1,6 +1,6 @@
 package com.revature.pojos;
 
-import java.awt.Image;
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,8 +15,8 @@ import javax.persistence.Table;
  * 
  * *********************************************/
 @Entity
-@Table(name="DRIVERS")
-public class Drivers {
+@Table(name="DRIVERS" , schema="pizza")
+public class Drivers implements Serializable{
 	/************************************************
 	 * Driver_ID 
 	 * 	number that has a OneToOne relation with the 
@@ -25,7 +25,7 @@ public class Drivers {
 	@Id
 	@OneToOne
 	@JoinColumn(name="user_id")
-	private int driverId;
+	private Users driverId;
 	
 	/************************************************
 	 * Driver_Photo
@@ -33,34 +33,42 @@ public class Drivers {
 	 * 
 	 * *********************************************/
 	@Column(name="driver_photo")
-	private Image driverPhoto;
+	private String driverPhoto;
 	
 	/************************************************
 	 * GETTERS AND SETTERS
 	 * 
 	 * 
 	 * *********************************************/
-	public int getDriverId() {
+
+
+	public Users getDriverId() {
 		return driverId;
 	}
-	public void setDriverId(int driverId) {
-		this.driverId = driverId;
-	}
-	public Image getDriverPhoto() {
+	public String getDriverPhoto() {
 		return driverPhoto;
 	}
-	public void setDriverPhoto(Image driverPhoto) {
+	public void setDriverPhoto(String driverPhoto) {
 		this.driverPhoto = driverPhoto;
 	}
+	public void setDriverId(Users driverId) {
+		this.driverId = driverId;
+	}
+
 	public Drivers() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Drivers(int driverId, Image driverPhoto) {
+	public Drivers(Users driverId, String driverPhoto) {
 		super();
 		this.driverId = driverId;
 		this.driverPhoto = driverPhoto;
 	}
-	
+	@Override
+	public String toString() {
+		return "Drivers [driverId=" + driverId + ", driverPhoto=" + driverPhoto + "]";
+	}
+
+
 	
 }

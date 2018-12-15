@@ -2,6 +2,8 @@ package com.revature.pojos;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -11,7 +13,7 @@ import javax.persistence.Table;
  * 
  ************************************** */
 @Entity
-@Table(name="ADRESS")
+@Table(name="ADRESS" , schema="pizza")
 public class Adress {
 	/****************************************
 	 * ID of the address
@@ -20,6 +22,7 @@ public class Adress {
 	 ************************************** */
 	@Id
 	@Column(name="adress_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int adressId;
 	
 	/****************************************
@@ -71,7 +74,7 @@ public class Adress {
 	 ************************************** */
 	@ManyToOne
 	@JoinColumn(name="user_id")
-	private int userId;
+	private Users userId;
 	
 	/****************************************
 	 * GETTERS AND SETTERS
@@ -119,10 +122,11 @@ public class Adress {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-	public int getUserId() {
+
+	public Users getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(Users userId) {
 		this.userId = userId;
 	}
 	public Adress() {
@@ -130,7 +134,7 @@ public class Adress {
 		// TODO Auto-generated constructor stub
 	}
 	public Adress(int adressId, String country, String state, String city, String adressLine, String adressLine2,
-			String zipcode, int userId) {
+			String zipcode, Users userId) {
 		super();
 		this.adressId = adressId;
 		this.country = country;
@@ -147,6 +151,7 @@ public class Adress {
 				+ ", adressLine=" + adressLine + ", adressLine2=" + adressLine2 + ", zipcode=" + zipcode + ", userId="
 				+ userId + "]";
 	}
+
 	
 	
 }

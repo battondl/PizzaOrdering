@@ -2,6 +2,8 @@ package com.revature.pojos;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -13,7 +15,7 @@ import javax.persistence.Table;
  * 
  * *********************************************/
 @Entity
-@Table(name="LINE_ITEM")
+@Table(name="LINE_ITEM" , schema="pizza")
 public class LineItem {
 	/************************************************
 	 * Line_Item_ID
@@ -22,6 +24,7 @@ public class LineItem {
 	 * *********************************************/
 	@Id
 	@Column(name="line_item_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int lineItemId;
 	
 	/************************************************
@@ -31,7 +34,7 @@ public class LineItem {
 	 * *********************************************/
 	@OneToOne
 	@JoinColumn(name="order_id")
-	private int orderId;
+	private Orders orderId;
 	
 	/************************************************
 	 * Order_Description
@@ -75,10 +78,11 @@ public class LineItem {
 	public void setLineItemId(int lineItemId) {
 		this.lineItemId = lineItemId;
 	}
-	public int getOrderId() {
+
+	public Orders getOrderId() {
 		return orderId;
 	}
-	public void setOrderId(int orderId) {
+	public void setOrderId(Orders orderId) {
 		this.orderId = orderId;
 	}
 	public int getQuantity() {
@@ -97,7 +101,7 @@ public class LineItem {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public LineItem(int lineItemId, int orderId, String orderDescription, int quantity, double price) {
+	public LineItem(int lineItemId, Orders orderId, String orderDescription, int quantity, double price) {
 		super();
 		this.lineItemId = lineItemId;
 		this.orderId = orderId;
@@ -110,6 +114,7 @@ public class LineItem {
 		return "LineItem [lineItemId=" + lineItemId + ", orderId=" + orderId + ", orderDescription=" + orderDescription
 				+ ", quantity=" + quantity + ", price=" + price + "]";
 	}
+
 	
 	
 	
