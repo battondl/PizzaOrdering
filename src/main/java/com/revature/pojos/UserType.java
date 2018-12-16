@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 /***************************************
  * Entity that connects to the USER_TYPE
  * table
  * 
- * ************************************/
+  ************************************/
 @Entity
 @Table(name="USER_TYPE",schema="pizza")
 public class UserType implements Serializable {
@@ -21,22 +21,23 @@ public class UserType implements Serializable {
 	 * 	number that identifies the id for what 
 	 * 	role the user are
 	 * has a OneToOne relation with the USERS table
-	 * ***********************************/
+	  ***********************************/
 	@Id
 	@Column(name="type_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int typeId;
 	/**************************************
 	 * Name
 	 * 
 	 * 
-	 * ***********************************/
+	  ***********************************/
 	@Column(name="name")
 	private String name;
 	
 	/*************************************
 	 * GETERS AND SETTERS
 	 * 
-	 * **********************************/
+	  **********************************/
 
 	public String getName() {
 		return name;

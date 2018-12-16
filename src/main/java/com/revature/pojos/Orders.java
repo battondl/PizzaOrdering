@@ -12,7 +12,7 @@ import javax.persistence.Table;
  * Entity that connects to the ORDERS table
  * 
  * 
- * *********************************************/
+  *********************************************/
 @Entity
 @Table(name="ORDERS" , schema="pizza")
 public class Orders {
@@ -20,7 +20,7 @@ public class Orders {
 	 * serial Order_ID
 	 * 
 	 * 
-	 * *********************************************/
+	  *********************************************/
 	@Id
 	@Column(name="order_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -29,7 +29,7 @@ public class Orders {
 	 * Customer_Number
 	 * 	has a OneToOne relation to the USERS table
 	 * 
-	 * *********************************************/
+	  *********************************************/
 	@OneToOne
 	@JoinColumn(name="user_id")
 	private Users customerNumber;
@@ -37,14 +37,14 @@ public class Orders {
 	 * Monetary_Total
 	 * 
 	 * 
-	 * *********************************************/
+	  *********************************************/
 	@Column(name="monetary_total")
 	private double moneyTotal;
 	/************************************************
 	 * Driver_ID
 	 * 
 	 * 
-	 * *********************************************/
+	  *********************************************/
 	@Column(name="driver_id")
 	private int driverId;
 	
@@ -52,7 +52,7 @@ public class Orders {
 	 * GETTERS AND SETTERS
 	 * 
 	 * 
-	 * *********************************************/
+	  *********************************************/
 	public int getOrderId() {
 		return orderId;
 	}

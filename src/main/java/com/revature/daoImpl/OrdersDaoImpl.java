@@ -7,10 +7,7 @@ import com.revature.pojos.Orders;
 import com.revature.util.SessionUtil;
 
 public class OrdersDaoImpl implements OrdersDAO{
-	/*---------------------------------------------
-	  * CRUD METHODS
-	  * 
-	  * -----------------------------------------*/
+
 	     public void persist(Orders entity) {
 	    	 Session sess = SessionUtil.getSession();
 	         sess.save(entity);

@@ -8,9 +8,9 @@ import com.revature.util.SessionUtil;
 
 public class UserTypeDaoImpl implements UserTypeDAO{
 	/*---------------------------------------------
-	  * CRUD METHODS
-	  * 
-	  * -----------------------------------------*/
+	   CRUD METHODS
+	   
+	-----------------------------------------*/
 	     public void persist(UserType entity) {
 	    	 Session sess = SessionUtil.getSession();
 	         sess.save(entity);

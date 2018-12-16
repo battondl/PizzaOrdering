@@ -7,10 +7,7 @@ import com.revature.pojos.Drivers;
 import com.revature.util.SessionUtil;
 
 public class DriversDaoImpl implements DriversDAO{
-	/*---------------------------------------------
-	  * CRUD METHODS
-	  * 
-	  * -----------------------------------------*/
+
 	     public void persist(Drivers entity) {
 	    	 Session sess = SessionUtil.getSession();
 	         sess.save(entity);

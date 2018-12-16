@@ -13,7 +13,7 @@ import javax.persistence.Table;
  * Entity that connects to the DRIVERS table
  * 
  * 
- * *********************************************/
+  *********************************************/
 @Entity
 @Table(name="DRIVERS" , schema="pizza")
 public class Drivers implements Serializable{
@@ -21,7 +21,7 @@ public class Drivers implements Serializable{
 	 * Driver_ID 
 	 * 	number that has a OneToOne relation with the 
 	 * 	USERS table (user_id)
-	 * *********************************************/
+	  *********************************************/
 	@Id
 	@OneToOne
 	@JoinColumn(name="user_id")
@@ -31,7 +31,7 @@ public class Drivers implements Serializable{
 	 * Driver_Photo
 	 * 
 	 * 
-	 * *********************************************/
+	  *********************************************/
 	@Column(name="driver_photo")
 	private String driverPhoto;
 	
@@ -39,7 +39,7 @@ public class Drivers implements Serializable{
 	 * GETTERS AND SETTERS
 	 * 
 	 * 
-	 * *********************************************/
+	  *********************************************/
 
 
 	public Users getDriverId() {

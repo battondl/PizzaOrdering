@@ -9,7 +9,7 @@ import com.revature.util.SessionUtil;
 
 public class TestDriver {
 
-	public static void main(String[] args) {
+ public static void main(String[] args) {
 		
 		Session sess = SessionUtil.getSession();
 		System.out.println("Session gotten!!!");
@@ -36,8 +36,8 @@ public class TestDriver {
 		
 		
 		
-		/*UserType ut= sess.get(UserType.class, 1);
-		System.out.println("UserType: " + ut);*/
+		UserType ut1= sess.get(UserType.class, 1);
+		System.out.println("UserType: " + ut1);
 		
 		tx.commit();
 		

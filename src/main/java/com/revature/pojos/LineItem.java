@@ -13,7 +13,7 @@ import javax.persistence.Table;
  * Entity that connects to the LINE_ITEM table
  * 
  * 
- * *********************************************/
+  *********************************************/
 @Entity
 @Table(name="LINE_ITEM" , schema="pizza")
 public class LineItem {
@@ -21,7 +21,7 @@ public class LineItem {
 	 * Line_Item_ID
 	 * 	a serial id, don't mess with it
 	 * 
-	 * *********************************************/
+	  *********************************************/
 	@Id
 	@Column(name="line_item_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -31,7 +31,7 @@ public class LineItem {
 	 * Order_ID
 	 * 	numeric value that has a OneToOne relation to
 	 * 	the ORDERS table
-	 * *********************************************/
+	  *********************************************/
 	@OneToOne
 	@JoinColumn(name="order_id")
 	private Orders orderId;
@@ -40,7 +40,7 @@ public class LineItem {
 	 * Order_Description
 	 * 
 	 * 
-	 * *********************************************/
+	  *********************************************/
 	@Column(name="order_description")
 	private String orderDescription;
 	
@@ -48,7 +48,7 @@ public class LineItem {
 	 * Quantity
 	 * 
 	 * 
-	 * *********************************************/
+	  *********************************************/
 	@Column(name="quantity")
 	private int quantity;
 	
@@ -56,7 +56,7 @@ public class LineItem {
 	 * Price
 	 * 
 	 * 
-	 * *********************************************/
+	  *********************************************/
 	@Column(name="price")
 	private double price;
 	
@@ -65,7 +65,7 @@ public class LineItem {
 	 * GETTERS AND SETTERS
 	 * 
 	 * 
-	 * *********************************************/
+	  *********************************************/
 	public String getOrderDescription() {
 		return orderDescription;
 	}

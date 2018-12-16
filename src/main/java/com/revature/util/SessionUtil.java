@@ -11,13 +11,13 @@
  * SesssionUtil
  * 	creating the session factory to get connection to the database
  * 
- * **************************************************/
+  **************************************************/
 	public class SessionUtil {
 		
-		/**/
+		
 		private static SessionFactory sessionFactory;
 		
-		/**/
+		
 		static 
 		{
 			StandardServiceRegistry standardRegistry =
@@ -29,7 +29,7 @@
 			sessionFactory = metaData.getSessionFactoryBuilder().build();
 		}
 		
-		/**/
+		
 		public static Session getSession()
 		{
 			return sessionFactory.openSession();

@@ -7,10 +7,7 @@ import com.revature.pojos.Users;
 import com.revature.util.SessionUtil;
 
 public class UsersDaoImpl implements UsersDAO{
-	/*---------------------------------------------
-	  * CRUD METHODS
-	  * 
-	  * -----------------------------------------*/
+
 	     public void persist(Users entity) {
 	    	 Session sess = SessionUtil.getSession();
 	         sess.save(entity);

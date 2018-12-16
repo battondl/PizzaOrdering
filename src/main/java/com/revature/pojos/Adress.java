@@ -11,7 +11,7 @@ import javax.persistence.Table;
 /****************************************
  * Entity that connects to the ADRESS table
  * 
- ************************************** */
+ ************************************* */
 @Entity
 @Table(name="ADRESS" , schema="pizza")
 public class Adress {
@@ -19,7 +19,7 @@ public class Adress {
 	 * ID of the address
 	 * in the DB is a serial we should not mess with it
 	 * 
-	 ************************************** */
+	 ************************************* */
 	@Id
 	@Column(name="adress_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -28,42 +28,42 @@ public class Adress {
 	/****************************************
 	 * Country
 	 * 
-	 ************************************** */
+	 ************************************* */
 	@Column(name="country")
 	private String country;
 	
 	/****************************************
 	 * State
 	 * 
-	 ************************************** */
+	 ************************************* */
 	@Column(name="state")
 	private String state;
 	
 	/****************************************
 	 * City
 	 * 
-	 ************************************** */
+	 ************************************* */
 	@Column(name="city")
 	private String city;
 	
 	/****************************************
 	 * Address Line 
 	 * 
-	 ************************************** */
+	 ************************************* */
 	@Column(name="adress_line")
 	private String adressLine;
 	
 	/****************************************
 	 * Address Line 2
 	 * 
-	 ************************************** */
+	 ************************************* */
 	@Column(name="adress_line_2")
 	private String adressLine2;
 	
 	/****************************************
 	 * Zip code
 	 * 
-	 ************************************** */
+	 ************************************* */
 	@Column(name="zip")
 	private String zipcode;
 	
@@ -71,7 +71,7 @@ public class Adress {
 	 * User_id
 	 * 	has a ManyToOne relationship to the USER table
 	 * to the userId primary key
-	 ************************************** */
+	 ************************************* */
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private Users userId;
@@ -79,7 +79,7 @@ public class Adress {
 	/****************************************
 	 * GETTERS AND SETTERS
 	 * 
-	 ************************************** */
+	 ************************************* */
 	public int getAdressId() {
 		return adressId;
 	}

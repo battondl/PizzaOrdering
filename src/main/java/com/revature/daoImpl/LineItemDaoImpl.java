@@ -7,10 +7,7 @@ import com.revature.pojos.LineItem;
 import com.revature.util.SessionUtil;
 
 public class LineItemDaoImpl implements LineItemDAO{
-	/*---------------------------------------------
-	  * CRUD METHODS
-	  * 
-	  * -----------------------------------------*/
+
 	     public void persist(LineItem entity) {
 	    	 Session sess = SessionUtil.getSession();
 	         sess.save(entity);
