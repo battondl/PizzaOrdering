@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.PostgreSQLDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			org.postgresql.Driver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:postgresql://awszxanderdb.cs7rjxsvenhy.us-east-1.rds.amazonaws.com:5432/FirstDB?
+		</property>
+		<property name="hibernate.connection.username">
+			rootZx
+		</property>
+		<property name="hibernate.connection.password">
+			Revature
+		</property>
+		
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- <mapping class="com.revature.entities.HoneyPot"/> -->
+		<mapping class="com.revature.pojos.Adress"/>
+		<mapping class="com.revature.pojos.Drivers"/>
+		<mapping class="com.revature.pojos.LineItem"/>
+		<mapping class="com.revature.pojos.Orders"/>
+		<mapping class="com.revature.pojos.Users"/>
+		<mapping class="com.revature.pojos.UserType"/>
+
+	</session-factory>
+</hibernate-configuration>
