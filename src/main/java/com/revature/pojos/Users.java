@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
 import com.revature.pojos.UserType;;
 /******************************************
  * User Object that connects to the USERS table
@@ -61,7 +64,7 @@ public class Users {
 	  ***************************************/
 	@OneToOne
 	@JoinColumn(name="type_id")
-	private UserType typeId;
+	private int typeId;
 	
 	/******************************************
 	 * Phone_Number
@@ -129,11 +132,11 @@ public class Users {
 		this.password = password;
 	}
 
-	public UserType getTypeId() {
+	public int getTypeId() {
 		return typeId;
 	}
 
-	public void setTypeId(UserType typeId) {
+	public void setTypeId(int typeId) {
 		this.typeId = typeId;
 	}
 
@@ -167,7 +170,7 @@ public class Users {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Users(int userId, String firstName, String lastName, String username, String password, UserType typeId,
+	public Users(int userId, String firstName, String lastName, String username, String password, int typeId,
 			String phoneNumber, String email, boolean isDriver) {
 		super();
 		this.userId = userId;
@@ -179,6 +182,14 @@ public class Users {
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.isDriver = isDriver;
+	}
+	
+	
+	
+	public Users(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
 	}
 
 	@Override
