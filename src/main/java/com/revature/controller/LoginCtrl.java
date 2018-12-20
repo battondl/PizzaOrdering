@@ -46,9 +46,10 @@ public class LoginCtrl {
 	
 	@PostMapping(path = "/login")
 	public ResponseEntity<Users> loginPost(@RequestBody Users users) {
-		System.out.println(users.getPassword());
+		System.out.println("INSIDE THE POST");
+		System.out.println(users.toString());
 		Users authUser = authService.validateUser(users);
-		System.out.println(users);
+		System.out.println(authUser);
 		
 		if(authUser != null) {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(users);

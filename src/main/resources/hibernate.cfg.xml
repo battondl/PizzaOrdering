@@ -22,12 +22,11 @@
 		<property name="hibernate.show_sql">true</property>
 		
 		<!-- <mapping class="com.revature.entities.HoneyPot"/> -->
-		<mapping class="com.revature.pojos.Adress"/>
 		<mapping class="com.revature.pojos.Drivers"/>
 		<mapping class="com.revature.pojos.LineItem"/>
 		<mapping class="com.revature.pojos.Orders"/>
 		<mapping class="com.revature.pojos.Users"/>
-		<mapping class="com.revature.pojos.UserType"/>
+
 
 	</session-factory>
 </hibernate-configuration>

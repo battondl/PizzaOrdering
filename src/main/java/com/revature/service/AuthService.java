@@ -12,14 +12,11 @@ import com.revature.util.SessionUtil;
 public class AuthService {
 
 public Users validateUser(Users user){
-	
+	System.out.println("inside the AUTH");
 		UsersDaoImpl udi=new UsersDaoImpl();
+		
 		Users validUser = null;
 		
-		/*if ("radioftw".equals(user.getUsername()) && "howaboutgod".equals(user.getPassword())){
-			validUser = user;
-			validUser.setUsername("Jacob Somelastname");
-		}*/
 		Session sess = SessionUtil.getSession();
 		System.out.println("Session gotten!!!");
 		
@@ -28,10 +25,10 @@ public Users validateUser(Users user){
 		
 		validUser = (Users) udi.getUserByName(user.getUsername(), user.getPassword());
 		System.out.println("the valid user: "+validUser);
-		tx.commit();
+/*		tx.commit();
 		
 		sess.close();
-		
+		*/
 		return validUser;
 		
 	}

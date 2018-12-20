@@ -7,11 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-import org.springframework.web.bind.annotation.RequestBody;
-
-import com.revature.pojos.UserType;;
+import javax.persistence.Table;;
 /******************************************
  * User Object that connects to the USERS table
  * 
@@ -57,14 +53,7 @@ public class Users {
 	@Column(name="password")
 	private String password;
 	
-	/******************************************
-	 * Type_ID
-	 * 	connects to the USER_TYPE table
-	 * 	its a one to one connection
-	  ***************************************/
-	@OneToOne
-	@JoinColumn(name="type_id")
-	private int typeId;
+
 	
 	/******************************************
 	 * Phone_Number
@@ -86,6 +75,9 @@ public class Users {
 	  ***************************************/
 	@Column(name="is_drver")
 	private boolean isDriver;
+	
+	@Column(name="adress")
+	private String adress;
 
 	
 	/*******************************************
@@ -132,13 +124,7 @@ public class Users {
 		this.password = password;
 	}
 
-	public int getTypeId() {
-		return typeId;
-	}
 
-	public void setTypeId(int typeId) {
-		this.typeId = typeId;
-	}
 
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -164,40 +150,43 @@ public class Users {
 	public void setDriver(boolean isDriver) {
 		this.isDriver = isDriver;
 	}
+	
+
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
 
 	public Users() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Users(int userId, String firstName, String lastName, String username, String password, int typeId,
-			String phoneNumber, String email, boolean isDriver) {
+	public Users(int userId, String firstName, String lastName, String username, String password, String phoneNumber,
+			String email, boolean isDriver, String adress) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
 		this.password = password;
-		this.typeId = typeId;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.isDriver = isDriver;
-	}
-	
-	
-	
-	public Users(String username, String password) {
-		super();
-		this.username = username;
-		this.password = password;
+		this.adress = adress;
 	}
 
 	@Override
 	public String toString() {
 		return "Users [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", username="
-				+ username + ", password=" + password + ", typeId=" + typeId + ", phoneNumber=" + phoneNumber
-				+ ", email=" + email + ", isDriver=" + isDriver + "]";
+				+ username + ", password=" + password + ", phoneNumber=" + phoneNumber + ", email=" + email
+				+ ", isDriver=" + isDriver + ", adress=" + adress + "]";
 	}
+
+
 
 
 
