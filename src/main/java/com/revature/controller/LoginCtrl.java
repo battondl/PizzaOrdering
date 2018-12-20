@@ -55,6 +55,12 @@ public class LoginCtrl {
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(users);
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
-		
+	}
+	@PostMapping(path = "/createaccount")
+	public void addingUser(@RequestBody Users users) {
+		System.out.println("INSIDE THE POST for adding users");
+		System.out.println(users.toString());
+		authService.addUser(users);
+		System.out.println("Done");
 	}
 }

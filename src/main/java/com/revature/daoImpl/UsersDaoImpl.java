@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Query;
 
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import com.revature.dao.UsersDAO;
 import com.revature.pojos.Users;
@@ -13,8 +14,18 @@ import com.revature.util.SessionUtil;
 public class UsersDaoImpl implements UsersDAO{
 
 	     public void persist(Users entity) {
-	    	 Session sess = SessionUtil.getSession();
-	         sess.save(entity);
+	 		Session sess = SessionUtil.getSession();
+			System.out.println("Session gotten!!!");
+			Transaction tx = sess.beginTransaction();
+			System.out.println("Transaction started");
+	    	 Users nu = entity;
+	    	 sess.save(nu);
+	    	 System.out.println(nu);
+	    	 
+	     	tx.commit();
+			
+			sess.close();
+	         //sess.save(entity);
 	 
 	     }
 	     public void update(Users entity) {

@@ -18,27 +18,21 @@ public class TestDriver {
 		
 
 		/*UserType ut=new UserType(1, "customer");
-		Integer newUT= (Integer) sess.save(ut);
+		Integer newUT= (Integer) sess.save(ut);*/
 		
-		Users nu = new Users(0, "", String lastName, String username, String password, String phoneNumber,
-				String email, boolean isDriver, String adress);
+		/*Users nu = new Users(3, "haaa", "boooo", "habo", "boha", "7897456645",
+				"uhi@", false, "dasfaf");
 		System.out.println("User: "+ nu);
 		
 		
 		Integer newId = (Integer) sess.save(nu);*/
 		
 		
-		Users u = sess.get(Users.class, 0);
-		Users u2 = sess.get(Users.class, 1);
-		Users u3 = sess.get(Users.class, 2);
-		Users u4 = sess.get(Users.class, 3);
+		Users u = sess.get(Users.class, 3);
+
 		
 		System.out.println(u);
-		System.out.println(u2);
-		
-		System.out.println(u3);
-		
-		System.out.println(u4);
+
 		
 		
 		

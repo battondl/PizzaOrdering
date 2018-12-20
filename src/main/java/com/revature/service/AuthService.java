@@ -30,6 +30,18 @@ public Users validateUser(Users user){
 		sess.close();
 		*/
 		return validUser;
+	}
+
+public void addUser(Users user){
+	System.out.println("inside the AUTH adding");
+		UsersDaoImpl udi=new UsersDaoImpl();
 		
+		Users validUser = user;
+		System.out.println(validUser);
+		udi.persist(user);
+
+
+		
+
 	}
 }
