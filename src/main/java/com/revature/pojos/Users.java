@@ -59,7 +59,7 @@ public class Users {
 	 * Phone_Number
 	 * 
 	  ***************************************/
-	@Column(name="phone_number")
+	@Column(name="phonenumber")
 	private String phoneNumber;
 	
 	/******************************************
@@ -76,8 +76,8 @@ public class Users {
 	@Column(name="is_drver")
 	private boolean isDriver;
 	
-	@Column(name="adress")
-	private String adress;
+	@Column(name="address")
+	private String address;
 
 	
 	/*******************************************
@@ -153,11 +153,11 @@ public class Users {
 	
 
 	public String getAdress() {
-		return adress;
+		return address;
 	}
 
 	public void setAdress(String adress) {
-		this.adress = adress;
+		this.address = adress;
 	}
 
 	public Users() {
@@ -176,14 +176,14 @@ public class Users {
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.isDriver = isDriver;
-		this.adress = adress;
+		this.address = adress;
 	}
 
 	@Override
 	public String toString() {
 		return "Users [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", username="
 				+ username + ", password=" + password + ", phoneNumber=" + phoneNumber + ", email=" + email
-				+ ", isDriver=" + isDriver + ", adress=" + adress + "]";
+				+ ", isDriver=" + isDriver + ", address=" + address + "]";
 	}
 
 
