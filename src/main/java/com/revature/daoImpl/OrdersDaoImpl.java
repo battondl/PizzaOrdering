@@ -1,6 +1,7 @@
 package com.revature.daoImpl;
 
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import com.revature.dao.OrdersDAO;
 import com.revature.pojos.Orders;
@@ -10,7 +11,11 @@ public class OrdersDaoImpl implements OrdersDAO{
 
 	     public void persist(Orders entity) {
 	    	 Session sess = SessionUtil.getSession();
+	    	 System.out.println("Session gotten!!!");
+			 Transaction tx = sess.beginTransaction();
 	         sess.save(entity);
+	         tx.commit();
+			 sess.close();
 	 
 	     }
 	     public void update(Orders entity) {

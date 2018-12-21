@@ -73,7 +73,7 @@ public class Users {
 	 * isDriver
 	 * 	a OneToMany connection to the 
 	  ***************************************/
-	@Column(name="is_drver")
+	@Column(name="is_driver")
 	private boolean isDriver;
 	
 	@Column(name="address")
@@ -152,12 +152,12 @@ public class Users {
 	}
 	
 
-	public String getAdress() {
+	public String getAddress() {
 		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.address = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public Users() {
@@ -166,7 +166,7 @@ public class Users {
 	}
 
 	public Users(int userId, String firstName, String lastName, String username, String password, String phoneNumber,
-			String email, boolean isDriver, String adress) {
+			String email, boolean isDriver, String address) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
@@ -176,7 +176,7 @@ public class Users {
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.isDriver = isDriver;
-		this.address = adress;
+		this.address = address;
 	}
 
 	@Override

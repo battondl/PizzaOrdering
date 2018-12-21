@@ -1,5 +1,7 @@
 package com.revature.pojos;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,10 +17,10 @@ import javax.persistence.Table;
   *********************************************/
 @Entity
 @Table(name="ORDERS" , schema="pizza")
-public class Orders {
+public class Orders implements Serializable{
 	/************************************************
 	 * serial Order_ID
-	 * 
+	 * 	order id generated automatically
 	 * 
 	  *********************************************/
 	@Id
@@ -27,26 +29,26 @@ public class Orders {
 	private int orderId;
 	/************************************************
 	 * Customer_Number
-	 * 	has a OneToOne relation to the USERS table
-	 * 
+	 * 	has a ManyToOne relation to the user_id on the USERS table
+	 * @PrimaryKeyJoinColumn
 	  *********************************************/
 	@OneToOne
 	@JoinColumn(name="user_id")
-	private Users customerNumber;
+	private Users customerId;
 	/************************************************
 	 * Monetary_Total
-	 * 
-	 * 
+	 * 	total amount of the order itself
+	 * 	(don't we get this from the line item)
 	  *********************************************/
-	@Column(name="monetary_total")
-	private double moneyTotal;
+	@Column(name="description")
+	private String description;
 	/************************************************
 	 * Driver_ID
-	 * 
-	 * 
+	 * 	id connected to the user table but no user is driver
+	 * 	so its pointless
 	  *********************************************/
-	@Column(name="driver_id")
-	private int driverId;
+	@Column(name="price")
+	private double price;
 	
 	/************************************************
 	 * GETTERS AND SETTERS
@@ -59,42 +61,43 @@ public class Orders {
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
-
-	public Users getCustomerNumber() {
-		return customerNumber;
+	public Users getCustomerId() {
+		return customerId;
 	}
-	public void setCustomerNumber(Users customerNumber) {
-		this.customerNumber = customerNumber;
+	public void setCustomerId(Users customerId) {
+		this.customerId = customerId;
 	}
-	public double getMoneyTotal() {
-		return moneyTotal;
+	public String getDescription() {
+		return description;
 	}
-	public void setMoneyTotal(double moneyTotal) {
-		this.moneyTotal = moneyTotal;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	public int getDriverId() {
-		return driverId;
+	public double getPrice() {
+		return price;
 	}
-	public void setDriverId(int driverId) {
-		this.driverId = driverId;
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public Orders(int orderId, Users customerId, String description, double price) {
+		super();
+		this.orderId = orderId;
+		this.customerId = customerId;
+		this.description = description;
+		this.price = price;
 	}
 	public Orders() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Orders(int orderId, Users customerNumber, double moneyTotal, int driverId) {
-		super();
-		this.orderId = orderId;
-		this.customerNumber = customerNumber;
-		this.moneyTotal = moneyTotal;
-		this.driverId = driverId;
-	}
 	@Override
 	public String toString() {
-		return "Orders [orderId=" + orderId + ", customerNumber=" + customerNumber + ", moneyTotal=" + moneyTotal
-				+ ", driverId=" + driverId + "]";
+		return "Orders [orderId=" + orderId + ", customerId=" + customerId + ", description=" + description
+				+ ", price=" + price + "]";
 	}
+	
 
+	
 	
 	
 

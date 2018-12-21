@@ -51,6 +51,12 @@ public class UsersDaoImpl implements UsersDAO{
 	    	 System.out.println("Inside the UserDAO IMpl");
 	    	 Users user =null;
 	    	 Session sess = SessionUtil.getSession();
+	 		System.out.println("Session gotten!!!");
+	 		
+	 		Transaction tx = sess.beginTransaction();
+	 		System.out.println("Transaction started");
+	 		
+	 		
 	    	 Query query= sess.createQuery("FROM Users u where u.username= :usP and u.password= :pasP");
 	    	 query.setParameter("usP", name);
 	    	 query.setParameter("pasP", password);
