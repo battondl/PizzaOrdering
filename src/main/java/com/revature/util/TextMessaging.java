@@ -7,8 +7,8 @@ import com.twilio.type.PhoneNumber;
 public class TextMessaging {
 	
       static final String twilioNumber = "18132130583";
-      public static final String ACCOUNT_SID = "AC116f541c3bdb7020c20ed577481ffb54";
-      public static final String AUTH_TOKEN = "e93663711400bda47a7498cf367830ac";
+      public static final String ACCOUNT_SID = "";
+      public static final String AUTH_TOKEN = "";
       
     public void sendMessage(String smsMessage, String phoneNumber) {
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
